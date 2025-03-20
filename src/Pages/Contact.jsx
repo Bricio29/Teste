@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
-import { Link } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
 import Komentar from "../components/Commentar";
 import Swal from "sweetalert2";
@@ -45,7 +44,6 @@ const ContactPage = () => {
     try {
       // Get form data
       const form = e.target;
-      const formData = new FormData(form);
 
       // Submit form
       await form.submit();
@@ -66,6 +64,7 @@ const ContactPage = () => {
         email: "",
         message: "",
       });
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       Swal.fire({
         title: 'Erro!',
